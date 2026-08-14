@@ -1,5 +1,5 @@
 # 🇨🇭 Remotion Template: Swiss Minimalist Tech Keynote
-> 基于 **Remotion + React + TypeScript** 的高质感瑞士极简风格（Swiss Style）商业与科技产品发布会视频生成引擎。
+> 基于 **Remotion + React + TypeScript** 的高质感瑞士极简风格（Swiss Style）商业与科技产品发布会视频生成引擎。支持**人类创作者极简配置**与 **AI Coding Agent（如 Antigravity / Claude / Cursor）自然语言全自动编排与修改导出**。
 
 [![Remotion](https://img.shields.io/badge/Remotion-4.0-blue?style=flat-square&logo=react)](https://www.remotion.dev/)
 [![React](https://img.shields.io/badge/React-19-61dafb?style=flat-square&logo=react)](https://react.dev/)
@@ -27,25 +27,42 @@
 
 ---
 
-## 🚀 极简快速上手（3 步制作你的视频）
+## 🤖 极简工作流推荐（两种使用方式）
 
-### 1. 克隆并安装依赖
+### 模式 A：交给 AI Agent 全自动处理（推荐 ⭐⭐⭐⭐⭐）
+> 本工程完全为 AI 智能体（Antigravity、Claude Code、Cursor、Windsurf 等）优化。你无需手写任何代码或计算帧数，只需对 AI 说人话：
+
+1. **一键生成新视频**：
+   > *“帮我把这篇口播音频和素材生成一个瑞士风格的发布会视频，参考这个模板。”*
+2. **指出时间点精准微调**：
+   > *“第 21 秒讲到多模态优势时切为采访视频。”*  
+   > *“第 35 秒的代码工程部分，把 4 张实测大图做成平滑的 Tab 轮播切换。”*  
+   > *“把第 12 秒的跑分从 56 分改成 68 分，断层极速改为 450 TPS。”*
+3. **一键自动渲染**：
+   > *“帮我重新渲染导出最终 1080P 高清成片。”*  
+   AI Agent 会全自动完成组件编排、精确毫秒时间轴对齐并一键调用命令导出成片。
+
+---
+
+### 模式 B：手动本地配置与快速上手
+
+#### 1. 克隆并安装依赖
 ```bash
-git clone https://github.com/your-username/remotion-template-swiss-tech.git
+git clone https://github.com/XIAOHAN987/remotion-template-swiss-tech.git
 cd remotion-template-swiss-tech
 npm install
 ```
 
-### 2. 启动网页端实时预览
+#### 2. 启动网页端实时预览
 ```bash
 npm run dev
 # 或
 npx remotion studio
 ```
-打开浏览器访问 **`http://localhost:3000`**，即可实时拖拽时间轴预览。
+打开浏览器访问 **`http://localhost:3000`**，即可实时拖拽时间轴预览与逐帧检查。
 
-### 3. 准备你自己的素材与配置
-- 将你的口播录音（`.wav`）、字幕（`.srt`）、录屏（`.mp4`）与跑分截图（`.png`）放入 `public/` 目录；
+#### 3. 替换为你自己的素材与导出
+- 将口播录音（`.wav`）、字幕（`.srt`）、录屏（`.mp4`）与跑分截图（`.png`）放入 `public/` 目录；
 - 在 `src/MainVideo.tsx` 中调整各场景文案与素材映射；
 - 在网页端右上角点击 **`Render video`** 或执行命令一键导出：
 ```bash
