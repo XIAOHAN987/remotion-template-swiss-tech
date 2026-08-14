@@ -7,6 +7,7 @@ import {
 } from "remotion";
 import { SwissCard } from "../components/SwissCard";
 import { SwissWhiteBadge } from "../components/SwissWhiteBadge";
+import { StarIcon, ChatCommentIcon, SparkleIcon } from "../components/SvgIcons";
 
 export const AutoPromoScene6Outro: React.FC = () => {
   const frame = useCurrentFrame();
@@ -33,9 +34,9 @@ export const AutoPromoScene6Outro: React.FC = () => {
       }}
     >
       <SwissWhiteBadge
-        title="开源项目名称 · 见置顶评论区"
+        title="开源项目名称 · 详见置顶评论区"
         subtitle="GET STARTED WITH YOUR AI CODING AGENT TODAY"
-        badge="GITHUB OPEN SOURCE"
+        badge="OPEN SOURCE TEMPLATE"
       />
 
       <SwissCard
@@ -51,7 +52,9 @@ export const AutoPromoScene6Outro: React.FC = () => {
       >
         {/* Repo Name */}
         <div style={{ display: "flex", alignItems: "center", gap: "18px" }}>
-          <span style={{ fontSize: "36px", transform: `scale(${starPulse})` }}>🌟</span>
+          <div style={{ transform: `scale(${starPulse})` }}>
+            <StarIcon size={36} color="#FFFFFF" />
+          </div>
           <div
             style={{
               fontSize: "36px",
@@ -65,7 +68,7 @@ export const AutoPromoScene6Outro: React.FC = () => {
           </div>
         </div>
 
-        {/* Command Pill */}
+        {/* Command / Action Pill without forbidden external URLs */}
         <div
           style={{
             backgroundColor: "rgba(0, 0, 0, 0.6)",
@@ -77,9 +80,9 @@ export const AutoPromoScene6Outro: React.FC = () => {
             gap: "16px",
           }}
         >
-          <span style={{ color: "#ef4444", fontWeight: 800, fontSize: "18px" }}>$</span>
-          <span style={{ color: "#38bdf8", fontSize: "20px", fontFamily: "Consolas, monospace", fontWeight: 600 }}>
-            git clone https://github.com/XIAOHAN987/remotion-template-swiss-tech.git
+          <span style={{ color: "rgba(255, 255, 255, 0.5)", fontWeight: 800, fontSize: "18px" }}>$</span>
+          <span style={{ color: "#FFFFFF", fontSize: "20px", fontFamily: "Consolas, monospace", fontWeight: 600 }}>
+            npx @xiaohan/remotion-swiss-template
           </span>
         </div>
 
@@ -94,22 +97,30 @@ export const AutoPromoScene6Outro: React.FC = () => {
               fontWeight: 700,
               color: "#FFFFFF",
               border: "1px solid rgba(255, 255, 255, 0.15)",
+              display: "flex",
+              alignItems: "center",
+              gap: "10px",
             }}
           >
-            💬 详细项目链接已置顶在评论区
+            <ChatCommentIcon size={18} color="#FFFFFF" />
+            <span>详细项目名称与配置已置顶在评论区</span>
           </div>
           <div
             style={{
-              backgroundColor: "rgba(34, 197, 94, 0.15)",
+              backgroundColor: "rgba(255, 255, 255, 0.12)",
               padding: "10px 24px",
               borderRadius: "100px",
               fontSize: "16px",
               fontWeight: 700,
-              color: "#4ade80",
-              border: "1px solid rgba(74, 222, 128, 0.3)",
+              color: "#FFFFFF",
+              border: "1px solid rgba(255, 255, 255, 0.25)",
+              display: "flex",
+              alignItems: "center",
+              gap: "10px",
             }}
           >
-            ✨ 复制给你的 Agent 一键安装体验
+            <SparkleIcon size={18} color="#FFFFFF" />
+            <span>让你的 AI 智能体一键安装体验</span>
           </div>
         </div>
       </SwissCard>

@@ -14,28 +14,34 @@ import { AutoPromoScene6Outro } from "./scenes_autopromo/AutoPromoScene6Outro";
 export const AutoPromoVideo: React.FC = () => {
   const frame = useCurrentFrame();
 
-  // Dynamic header titles based on active scene
-  let headerTitle = "AI 自动化视频工作流 · REMOTION 开源";
-  let headerSubtitle = "瑞士极简风格 · 任何人均可一键复刻";
+  let title = "AI 自动化视频工作流 · REMOTION 开源";
+  let subtitle = "暗调极简风格 · 任何人均可一键复刻";
+  let badge = "AI VIDEO AGENT";
 
   if (frame >= 0 && frame < 160) {
-    headerTitle = "AI 自动剪辑 · 智能体全流程";
-    headerSubtitle = "AUTONOMOUS AI VIDEO GENERATION ENGINE";
+    title = "AI 自动剪辑 · 智能体全流程";
+    subtitle = "AUTONOMOUS AI VIDEO GENERATION ENGINE";
+    badge = "AI VIDEO ENGINE";
   } else if (frame >= 160 && frame < 310) {
-    headerTitle = "全套开源 · 瑞士极简组件库";
-    headerSubtitle = "GITHUB OPEN SOURCE · MIT LICENSE";
+    title = "全套开源 · 暗调极简组件库";
+    subtitle = "SWISS MINIMALIST TECH KEYNOTE TEMPLATE";
+    badge = "OPEN SOURCE TEMPLATE";
   } else if (frame >= 310 && frame < 502) {
-    headerTitle = "极简工作流 · 拖入素材即可";
-    headerSubtitle = "ZERO CODE FRICTION · DRAG & DROP PIPELINE";
+    title = "极简工作流 · 拖入素材即可";
+    subtitle = "ZERO CODE FRICTION · DRAG & DROP PIPELINE";
+    badge = "ZERO FRICTION";
   } else if (frame >= 502 && frame < 640) {
-    headerTitle = "高度自由 · 自然语言指挥 AI";
-    headerSubtitle = "NATURAL LANGUAGE AI PROMPT CONTROL";
+    title = "高度自由 · 自然语言指挥 AI";
+    subtitle = "NATURAL LANGUAGE AI PROMPT CONTROL";
+    badge = "NATURAL PROMPT";
   } else if (frame >= 640 && frame < 746) {
-    headerTitle = "多场景赋能 · 商业与知识发布";
-    headerSubtitle = "KEYNOTE / REPORT / TECH DEMO USE CASES";
+    title = "多场景赋能 · 商业与知识发布";
+    subtitle = "KEYNOTE / REPORT / TECH DEMO USE CASES";
+    badge = "ALL USE CASES";
   } else {
-    headerTitle = "项目开源 · 见置顶评论区";
-    headerSubtitle = "INSTALL WITH YOUR AGENT TODAY";
+    title = "开源项目 · 详见置顶评论区";
+    subtitle = "INSTALL WITH YOUR AGENT TODAY";
+    badge = "COMMUNITY RELEASE";
   }
 
   return (
@@ -47,11 +53,16 @@ export const AutoPromoVideo: React.FC = () => {
         position: "relative",
         overflow: "hidden",
         fontFamily:
-          "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+          '"Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif',
       }}
     >
       {/* 3D Perspective Grid Background & Ambient Lighting */}
-      <Background headerTitle={headerTitle} headerSubtitle={headerSubtitle} />
+      <Background
+        title={title}
+        subtitle={subtitle}
+        badge={badge}
+        footerTag="REMOTION 4.0 · SWISS MINIMALIST SYSTEM · 2026"
+      />
 
       {/* Voiceover Audio */}
       <Audio src={staticFile("自动剪辑.wav")} volume={1} />

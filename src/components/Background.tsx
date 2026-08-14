@@ -5,17 +5,19 @@ export const Background: React.FC<{
   title?: string;
   subtitle?: string;
   badge?: string;
+  footerTag?: string;
 }> = ({
-  title = "全新发布 · GEMINI 3.7 FLASH",
-  subtitle = "新一代多模态推理与极速引擎",
-  badge = "GOOGLE DEEPMIND",
+  title = "AI 自动化视频工作流 · REMOTION 开源",
+  subtitle = "瑞士极简风格 · 任何人均可一键复刻",
+  badge = "AI VIDEO AGENT",
+  footerTag = "REMOTION 4.0 · SWISS KEYNOTE SYSTEM · 2026",
 }) => {
   const frame = useCurrentFrame();
 
   // Seamless continuous flowing grid offset (no modulo to prevent any snapping)
   const gridOffsetY = frame * 0.8;
 
-  // Gentle, strictly continuous single-direction ambient drift across the entire 91.3s
+  // Gentle, strictly continuous single-direction ambient drift
   const lightDriftX = interpolate(frame, [0, 2740], [-120, 120]);
 
   return (
@@ -26,7 +28,8 @@ export const Background: React.FC<{
         backgroundColor: "#060608",
         overflow: "hidden",
         pointerEvents: "none",
-        fontFamily: '"Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif',
+        fontFamily:
+          '"Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif',
       }}
     >
       {/* Dark radial base gradient */}
@@ -38,7 +41,7 @@ export const Background: React.FC<{
         }}
       />
 
-      {/* Crimson Ambient Glow at bottom - Smooth continuous drift with zero resets */}
+      {/* Crimson Ambient Glow at bottom */}
       <div
         style={{
           position: "absolute",
@@ -48,7 +51,8 @@ export const Background: React.FC<{
           width: "1400px",
           height: "450px",
           borderRadius: "50%",
-          background: "radial-gradient(ellipse at center, rgba(225, 29, 72, 0.22) 0%, rgba(185, 28, 28, 0.08) 45%, transparent 75%)",
+          background:
+            "radial-gradient(ellipse at center, rgba(225, 29, 72, 0.22) 0%, rgba(185, 28, 28, 0.08) 45%, transparent 75%)",
           filter: "blur(80px)",
         }}
       />
@@ -134,7 +138,7 @@ export const Background: React.FC<{
         />
       </div>
 
-      {/* Bottom Footer Metadata - Swiss Editorial Style */}
+      {/* Bottom Footer Metadata */}
       <div
         style={{
           position: "absolute",
@@ -158,19 +162,15 @@ export const Background: React.FC<{
               width: "7px",
               height: "7px",
               borderRadius: "50%",
-              backgroundColor: "#22c55e",
-              boxShadow: "0 0 8px #22c55e",
+              backgroundColor: "rgba(255, 255, 255, 0.8)",
+              boxShadow: "0 0 8px rgba(255, 255, 255, 0.6)",
             }}
           />
-          <span>Google DeepMind · Gemini 3.7 Series</span>
+          <span>AI Video Agent · Autonomous Pipeline</span>
         </div>
 
         <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-          <span>LMSYS ARENA</span>
-          <span>·</span>
-          <span>SWE-BENCH PRO</span>
-          <span>·</span>
-          <span>2026</span>
+          <span>{footerTag}</span>
         </div>
       </div>
     </div>

@@ -9,16 +9,14 @@ import {
 } from "remotion";
 import { SwissCard } from "../components/SwissCard";
 import { SwissWhiteBadge } from "../components/SwissWhiteBadge";
+import { CodeTerminalIcon, SparkleIcon } from "../components/SvgIcons";
 
 export const AutoPromoScene1AI: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  // Entrance spring
   const scale = spring({ frame, fps, config: { damping: 18, stiffness: 90 } });
   const opacity = interpolate(frame, [0, 15], [0, 1], { extrapolateRight: "clamp" });
-
-  // Camera zoom in video
   const videoScale = interpolate(frame, [0, 160], [1.0, 1.05], { extrapolateRight: "clamp" });
 
   return (
@@ -35,7 +33,7 @@ export const AutoPromoScene1AI: React.FC = () => {
         transform: `scale(${scale})`,
       }}
     >
-      {/* Left: macOS Video Player showcasing previous rendering */}
+      {/* Left: macOS Window */}
       <div
         style={{
           flex: "1.3",
@@ -43,13 +41,12 @@ export const AutoPromoScene1AI: React.FC = () => {
           borderRadius: "20px",
           overflow: "hidden",
           border: "1px solid rgba(255, 255, 255, 0.15)",
-          boxShadow: "0 30px 80px rgba(0, 0, 0, 0.7), 0 0 50px rgba(239, 68, 68, 0.12)",
+          boxShadow: "0 30px 80px rgba(0, 0, 0, 0.8), 0 0 40px rgba(225, 29, 72, 0.15)",
           backgroundColor: "#0d0f14",
           display: "flex",
           flexDirection: "column",
         }}
       >
-        {/* macOS Titlebar */}
         <div
           style={{
             height: "44px",
@@ -67,23 +64,23 @@ export const AutoPromoScene1AI: React.FC = () => {
             <div style={{ width: "13px", height: "13px", borderRadius: "50%", backgroundColor: "#27c93f" }} />
           </div>
           <div style={{ fontSize: "14px", color: "rgba(255, 255, 255, 0.5)", fontWeight: 500, letterSpacing: "1px" }}>
-            AI_AUTONOMOUS_VIDEO_PIPELINE.MP4
+            AI_AUTONOMOUS_PIPELINE.MP4
           </div>
           <div
             style={{
               fontSize: "11px",
-              color: "#38bdf8",
-              backgroundColor: "rgba(56, 189, 248, 0.12)",
+              color: "rgba(255, 255, 255, 0.9)",
+              backgroundColor: "rgba(255, 255, 255, 0.1)",
               padding: "4px 10px",
               borderRadius: "100px",
               fontWeight: 700,
+              border: "1px solid rgba(255, 255, 255, 0.15)",
             }}
           >
             100% CODE GENERATED
           </div>
         </div>
 
-        {/* Video Content */}
         <div style={{ flex: 1, position: "relative", overflow: "hidden", backgroundColor: "#000" }}>
           <div style={{ width: "100%", height: "100%", transform: `scale(${videoScale})` }}>
             <OffthreadVideo
@@ -95,32 +92,31 @@ export const AutoPromoScene1AI: React.FC = () => {
         </div>
       </div>
 
-      {/* Right: Swiss Badges and Highlight Points */}
+      {/* Right: Swiss Badges */}
       <div style={{ flex: "0.9", display: "flex", flexDirection: "column", gap: "24px" }}>
         <SwissWhiteBadge
           title="AI 自动化视频工作流"
           subtitle="AUTONOMOUS CODE-DRIVEN ENGINE"
-          badge="100% AI GENERATED"
+          badge="100% CODE DRIVEN"
         />
 
         <SwissCard style={{ padding: "30px 32px" }}>
-          <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
               <div
                 style={{
                   width: "44px",
                   height: "44px",
                   borderRadius: "12px",
-                  backgroundColor: "rgba(239, 68, 68, 0.15)",
-                  color: "#ef4444",
+                  backgroundColor: "rgba(255, 255, 255, 0.08)",
+                  border: "1px solid rgba(255, 255, 255, 0.15)",
+                  color: "#FFFFFF",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  fontSize: "20px",
-                  fontWeight: 900,
                 }}
               >
-                01
+                <SparkleIcon size={22} color="#FFFFFF" />
               </div>
               <div>
                 <div style={{ fontSize: "20px", fontWeight: 700, color: "#FFFFFF" }}>AI Agent 智能体编排</div>
@@ -136,16 +132,15 @@ export const AutoPromoScene1AI: React.FC = () => {
                   width: "44px",
                   height: "44px",
                   borderRadius: "12px",
-                  backgroundColor: "rgba(56, 189, 248, 0.15)",
-                  color: "#38bdf8",
+                  backgroundColor: "rgba(255, 255, 255, 0.08)",
+                  border: "1px solid rgba(255, 255, 255, 0.15)",
+                  color: "#FFFFFF",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  fontSize: "20px",
-                  fontWeight: 900,
                 }}
               >
-                02
+                <CodeTerminalIcon size={22} color="#FFFFFF" />
               </div>
               <div>
                 <div style={{ fontSize: "20px", fontWeight: 700, color: "#FFFFFF" }}>Remotion 毫秒级精准渲染</div>

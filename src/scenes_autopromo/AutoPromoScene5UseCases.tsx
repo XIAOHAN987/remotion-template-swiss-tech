@@ -7,6 +7,12 @@ import {
 } from "remotion";
 import { SwissCard } from "../components/SwissCard";
 import { SwissWhiteBadge } from "../components/SwissWhiteBadge";
+import {
+  ScienceAtomIcon,
+  DashboardMetricsIcon,
+  LayersArchitectureIcon,
+  RocketLaunchIcon,
+} from "../components/SvgIcons";
 
 export const AutoPromoScene5UseCases: React.FC = () => {
   const frame = useCurrentFrame();
@@ -17,31 +23,27 @@ export const AutoPromoScene5UseCases: React.FC = () => {
 
   const cases = [
     {
-      icon: "🔬",
+      icon: <ScienceAtomIcon size={30} color="#FFFFFF" />,
       title: "科技发布 · 前沿科普",
       desc: "AI大模型发布会 / 跑分对比 / 算法原理解析",
-      color: "#ef4444",
       delay: 5,
     },
     {
-      icon: "📊",
+      icon: <DashboardMetricsIcon size={30} color="#FFFFFF" />,
       title: "商业汇报 · 业务大屏",
       desc: "企业年度财报 / 数据大屏 / KPI 与经营复盘",
-      color: "#38bdf8",
       delay: 15,
     },
     {
-      icon: "💡",
+      icon: <LayersArchitectureIcon size={30} color="#FFFFFF" />,
       title: "知识讲解 · 架构拆解",
       desc: "深度技术教程 / 架构设计 / 知识点系统拆解",
-      color: "#a855f7",
       delay: 25,
     },
     {
-      icon: "🚀",
+      icon: <RocketLaunchIcon size={30} color="#FFFFFF" />,
       title: "产品宣发 · 特性演示",
       desc: "SaaS 商业上线 / 功能版本更新 / 核心卖点巡礼",
-      color: "#22c55e",
       delay: 35,
     },
   ];
@@ -67,7 +69,6 @@ export const AutoPromoScene5UseCases: React.FC = () => {
         badge="四大主流应用场景"
       />
 
-      {/* 2x2 Grid of Use Case Cards */}
       <div
         style={{
           width: "100%",
@@ -93,15 +94,14 @@ export const AutoPromoScene5UseCases: React.FC = () => {
             >
               <div
                 style={{
-                  width: "68px",
-                  height: "68px",
-                  borderRadius: "20px",
-                  backgroundColor: `rgba(255, 255, 255, 0.05)`,
-                  border: `1px solid ${c.color}`,
+                  width: "64px",
+                  height: "64px",
+                  borderRadius: "18px",
+                  backgroundColor: `rgba(255, 255, 255, 0.08)`,
+                  border: `1px solid rgba(255, 255, 255, 0.18)`,
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  fontSize: "34px",
                   flexShrink: 0,
                 }}
               >
