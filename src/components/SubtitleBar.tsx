@@ -1,11 +1,15 @@
 import React from "react";
 import { useCurrentFrame } from "remotion";
-import { SUBTITLES } from "../data/subtitles";
+import { SUBTITLES, SubtitleItem } from "../data/subtitles";
 
-export const SubtitleBar: React.FC = () => {
+interface SubtitleBarProps {
+  subtitles?: SubtitleItem[];
+}
+
+export const SubtitleBar: React.FC<SubtitleBarProps> = ({ subtitles = SUBTITLES }) => {
   const frame = useCurrentFrame();
 
-  const activeSubtitle = SUBTITLES.find(
+  const activeSubtitle = subtitles.find(
     (sub) => frame >= sub.startFrame && frame <= sub.endFrame + 4
   );
 
