@@ -1,10 +1,16 @@
 {
-  "name": "video",
+  "name": "remotion-template-swiss-tech",
   "version": "1.0.0",
-  "description": "My Remotion video",
-  "repository": {},
-  "license": "UNLICENSED",
-  "private": true,
+  "description": "Swiss Minimalist Tech Keynote Video Template for Remotion + AI Agents",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XIAOHAN987/remotion-template-swiss-tech.git"
+  },
+  "license": "MIT",
+  "private": false,
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "dependencies": {
     "@remotion/cli": "4.0.509",
     "@remotion/media": "^4.0.509",
@@ -24,7 +30,8 @@
   },
   "scripts": {
     "dev": "remotion studio",
-    "build": "remotion bundle",
+    "build": "remotion render Gemini37Video out/gemini37.mp4",
+    "build:promo": "remotion render AutoPromoVideo out/promo.mp4",
     "upgrade": "remotion upgrade",
     "lint": "eslint src && tsc"
   },
